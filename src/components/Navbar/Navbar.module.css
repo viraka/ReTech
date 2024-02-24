@@ -1,14 +1,22 @@
 .navbarWrapper {
     display: flex;
-    justify-content: space-around;
-    height: 40px;
-    font-family: var(--text-heading);
-    background: #F8EFFF;
-    padding: 1.5vw 0vw;
+	position: fixed;
+	top: 0;
+    left: 0;
+	z-index: 100;
+	flex-wrap: nowrap;
+	width: 100%;
+	justify-content: space-around;
+    padding: .5vw 0vw;
+	background-color: var(--accent); /* White background with 50% opacity */
+    backdrop-filter: blur(8px); /* Blur effect */
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .navbarWrapper .navbarHeading {
     font-weight: 800;
+    padding-top: 1rem;
+    padding-left:1rem;
     font-size: 1.2rem;
 }
 
@@ -28,4 +36,23 @@
     color: var(--secondary);
     cursor: pointer;
 
+}
+
+.navbarWrapper .navbarButtons  {
+    display: flex;
+    padding-top: 1rem;
+    padding-right:1rem;
+    gap:1rem;
+}
+
+.navbarWrapper .navbarButtons button {
+    height:30px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.navbarWrapper .navbarButtons button span{
+    padding-right:2px;
 }

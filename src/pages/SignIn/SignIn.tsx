@@ -58,12 +58,10 @@ const SignIn = () => {
     };
 
     return (
-        <div className={styles.Wrapper}>
-            <div className={styles.Header}>
-                <div>
-                    <h1>Log In</h1>
-                    <p>Please sign in to your existing account</p>
-                </div>
+        <div className={styles.sigInWrapper}>
+            <div className={styles.sigInHeader}>
+                    <span>Log In</span>
+                    <span>Please sign in to your existing account</span>   
             </div>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <div>
