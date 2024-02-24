@@ -14,9 +14,9 @@ const Navbar = () => {
                         <li>Services</li>
                     </ul>
                 </div>
-                <div className={styles.navbarButton}>
+                <div className={styles.navbarButtons}>
                     <button onClick={() => navigate('/login')}>Log In</button>
-                    <button onClick={() => navigate('/signup')}><FaCirclePlus /> Add Your Shop</button>
+                    <button onClick={() => navigate('/signup')}><FaCirclePlus/> Add Shop</button>
                 </div>
             </div>
         </>
