@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --primary: #191919;
+  --secondary: #8910F1;
+  --background: #FDFDFD;
+  --navbar: #dfc7f1;
+  --tertiary: #F63C7C;
+  --text-heading: 'Nunito', sans-serif;
+  --text-body: 'Fira Sans', sans-serif;
+  --accent: #19181885;
+  --muted: #7e7e7ea9;
+  --border-radius: 8px;
+  --border: rgba(52, 52, 52, 0.758);
+  --border-light: rgba(255, 255, 255, 0.2);
+  --danger: #c33333;
+  --inter: 'Inter', sans-serif;
+  --chakra: 'Chakra Petch', sans-serif;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--text-body);
+  background: linear-gradient(to bottom, #f3ecf9 0%, var(--navbar) 100%);
+  background-repeat: no-repeat;
+  color: var(--primary);
+}
+
+button {
+  background-color: var(--secondary);
+  font-weight: 600;
+  color: var(--background);
+  border-radius: 10px;
+  padding: .8rem 1rem;
+  border: 1px solid var(--secondary);
+}
+
+button:hover {
+  background-color: var(--background);
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--border-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+}

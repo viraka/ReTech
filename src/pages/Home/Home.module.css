@@ -1,0 +1,23 @@
+.homeWrapper {
+    display: flex;
+    padding: 3rem 3rem;
+}
+
+.homeWrapper .homeHeading {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.homeWrapper .homeHeading span {
+    color: var(--secondary);
+}
+
+.homeWrapper .homeContent {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+.homeWrapper .homeContent p {
+    margin-top: 1rem;
+}
