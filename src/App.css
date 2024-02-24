@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-  --primary: #191919;
-  --secondary: #8910F1;
-  --background: #FDFDFD;
-  --navbar: #dfc7f1;
+  --primary: #f7f3f3;
+  --secondary: #929292;
+  --background: #141414;
+  --navbar: #fbfafa;
   --tertiary: #F63C7C;
   --text-heading: 'Nunito', sans-serif;
   --text-body: 'Fira Sans', sans-serif;
@@ -18,12 +18,12 @@
   --chakra: 'Chakra Petch', sans-serif;
 }
 
-html,
-body {
+html {
+  height:100vh;
   padding: 0;
   margin: 0;
   font-family: var(--text-body);
-  background: linear-gradient(to bottom, #f3ecf9 0%, var(--navbar) 100%);
+  background: linear-gradient(to bottom, #0e0e0f 0%, var(--navbar) 100%);
   background-repeat: no-repeat;
   color: var(--primary);
 }
