@@ -1,5 +1,5 @@
 import styles from './Navbar.module.css'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaCirclePlus } from "react-icons/fa6";
 const Navbar = () => {
     const navigate = useNavigate()
@@ -9,9 +9,9 @@ const Navbar = () => {
                 <div className={styles.navbarHeading}>Re<span>Tech</span></div>
                 <div className={styles.navbarLinks}>
                     <ul>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Services</li>
+                        <li><Link to={'/'}>Home</Link></li>
+                        <li><Link to={'#about'}>About</Link></li>
+                        <li><Link to={'/services'}>Services</Link></li>
                     </ul>
                 </div>
                 <div className={styles.navbarButton}>
