@@ -36,7 +36,7 @@ function App() {
       element: <Search />,
     },
     {
-      path: "/home",
+      path: "/dashboard",
       element: <PrivateRoute />,
       children: [
         {
