@@ -2,14 +2,14 @@
 
 :root {
   --primary: #f7f3f3;
-  --secondary: #929292;
+  --secondary: #7c7676;
   --background: #141414;
   --navbar: #fbfafa;
   --tertiary: #F63C7C;
   --text-heading: 'Nunito', sans-serif;
   --text-body: 'Fira Sans', sans-serif;
   --accent: #19181885;
-  --muted: #7e7e7ea9;
+  --muted: #8e888812;
   --border-radius: 8px;
   --border: rgba(52, 52, 52, 0.758);
   --border-light: rgba(255, 255, 255, 0.2);
@@ -19,13 +19,17 @@
 }
 
 html {
-  height:100vh;
+  height:100%;
+  width:100%;
   padding: 0;
   margin: 0;
   font-family: var(--text-body);
   background: linear-gradient(to bottom, #0e0e0f 0%, var(--navbar) 100%);
   background-repeat: no-repeat;
   color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content:center ;
 }
 
 button {
@@ -33,7 +37,7 @@ button {
   font-weight: 600;
   color: var(--background);
   border-radius: 10px;
-  padding: .8rem 1rem;
+  padding: .8rem .8rem;
   border: 1px solid var(--secondary);
 }
 
@@ -44,13 +48,13 @@ button:hover {
 }
 
 ::-webkit-scrollbar {
-  width: 7px;
+	width: 2%;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--border-light);
+	background: var(--border-light);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent);
+	background: var(--accent);
 }

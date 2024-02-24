@@ -1,18 +1,12 @@
 .navbarWrapper {
-    /* z-index:1;
-    display: flex;
-    justify-content: space-around;
-    height: 40px;
-    font-family: var(--text-heading);
-    background: #2d2d2d;
-    padding: 1.5vw 0vw; */
     display: flex;
 	position: fixed;
 	top: 0;
+    left: 0;
 	z-index: 100;
 	flex-wrap: nowrap;
 	width: 100%;
-	justify-content: space-between;
+	justify-content: space-around;
     padding: .5vw 0vw;
 	background-color: var(--accent); /* White background with 50% opacity */
     backdrop-filter: blur(8px); /* Blur effect */
@@ -57,4 +51,8 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+
+.navbarWrapper .navbarButtons button span{
+    padding-right:2px;
 }

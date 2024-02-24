@@ -16,7 +16,7 @@ const Navbar = () => {
                 </div>
                 <div className={styles.navbarButtons}>
                     <button onClick={() => navigate('/login')}>Log In</button>
-                    <button onClick={() => navigate('/signup')}><FaCirclePlus/> Add Shop</button>
+                    <button onClick={() => navigate('/signup')}><span><FaCirclePlus/></span> Add Shop</button>
                 </div>
             </div>
         </>
