@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
-import { supabase } from '../../utils/supabase';
-import toast from 'react-hot-toast';
+//import { useNavigate } from 'react-router-dom'
+//import { supabase } from '../../utils/supabase';
+//import toast from 'react-hot-toast';
 import styles from './SignIn.module.css';
 
 
@@ -13,26 +13,26 @@ const SignIn = () => {
         email: "",
         password: "",
     });
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
 
-    const handleSignIn = async () => {
-        // let { data: res, error } = await supabase.auth.signInWithPassword(data);
-        // if (error) {
-        //     throw error.message;
-        // } else {
-        //     localStorage.setItem("user", JSON.stringify(res.session));
-        //     const { data, error } = await supabase.rpc("get_user_roles", {
-        //         check_user_id: res.user?.id,
-        //     });
-        //     if (error) {
-        //         throw error.message;
-        //     } else {
-        //         const roles = data.map((role: { role_name: string }) => role.role_name);
-        //         localStorage.setItem("roles", JSON.stringify(roles));
-        //         return data;
-        //     }
-        // }
-    };
+    //const handleSignIn = async () => {
+    // let { data: res, error } = await supabase.auth.signInWithPassword(data);
+    // if (error) {
+    //     throw error.message;
+    // } else {
+    //     localStorage.setItem("user", JSON.stringify(res.session));
+    //     const { data, error } = await supabase.rpc("get_user_roles", {
+    //         check_user_id: res.user?.id,
+    //     });
+    //     if (error) {
+    //         throw error.message;
+    //     } else {
+    //         const roles = data.map((role: { role_name: string }) => role.role_name);
+    //         localStorage.setItem("roles", JSON.stringify(roles));
+    //         return data;
+    //     }
+    // }
+    //};
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
