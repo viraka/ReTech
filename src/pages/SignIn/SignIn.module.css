@@ -1,24 +1,100 @@
-.sigInWrapper{
+/* Updated styles for the sign-in wrapper */
+.sigInWrapper {
     height: 100%;
     display: flex;
-    width:fit-content;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: center;
-    padding:1rem;
     align-items: center;
-    background-color: var(--muted); /* White background with 50% opacity */
-    backdrop-filter: blur(8px); /* Blur effect */
-    -webkit-backdrop-filter: blur(8px);
-    border: 2px solid white;
-}
-
-.sigInHeader{
-    display:flex;
-    flex-direction:column;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(255, 252, 252, 0.95); /* White background with 95% opacity */
+    border: 2px solid rgb(31, 30, 30);
+    border-radius: 15px;
+    color:black;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+  
+  /* Styles for the header */
+  .sigInHeader {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-
-.sigInHeader span:first-child{
-
-}
+    gap: 1rem;
+  }
+  
+  .sigInHeader span:first-child {
+    font-size: 2rem;
+    font-weight: 600;
+    color:black;
+  }
+  
+  .sigInHeader span:last-child {
+    color:black;
+    font-weight: 300;
+    /* Assuming --accent is a defined color variable */
+  }
+  
+  /* Styles for the form container */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  
+  /* Input styles */
+  input {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  /* Styles for the forgot password section */
+  .ForgotPass {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .ForgotPass input {
+    margin-right: 8px;
+  }
+  
+  .ForgotPass button {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  /* Styles for the sign-in button */
+  button {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--tertiary);
+    color:rgb(236, 241, 245);
+  }
+  
+  /* Styles for the link to sign up */
+  span {
+    color: var(--accent);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+ 
+ 

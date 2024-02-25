@@ -1,22 +1,44 @@
 .homeWrapper {
-    padding: 5rem 3rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vw;
+    width:100%;
 }
 
-.homeWrapper .homeHeading {
+.homeWrapper .homeHeading { 
+    color: black;
     font-size: 3rem;
-    font-weight: 800;
+    font-weight: 600;
 }
 
+.homeWrapper p{
+    font-size: 1.2rem;
+    color: black;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+.homeWrapper p button{
+    border-radius: 15px;
+    background-color: white;
+    color: black;
+
+}
+.homeWrapper p button:hover{
+    font-size: 1rem;
+}
 .homeWrapper .homeHeading span {
+    padding-left: 7px;
     color: var(--secondary);
 }
 
-.homeWrapper .homeContent {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-top: 1rem;
-}
-
-.homeWrapper .homeContent p {
-    margin-top: 1rem;
+.homeWrapper .homeContent img {
+    display:flex;
+    justify-content: space-between;
+    height: 450px;
+    width:100%;
+    object-fit: contain;
+    mix-blend-mode: darken;
 }

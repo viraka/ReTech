@@ -55,30 +55,24 @@ const SignUp = () => {
     return (
         <div className={styles.Wrapper}>
             <div className={styles.Header}>
-                <div>
-                    <h1>Sign Up</h1>
-                    <p>Please sign up to get started</p>
-                </div>
+                    <span>Sign Up</span>
+                    <span>Please sign up to get started</span>
             </div>
             <form onSubmit={(e) => handleSubmit(e)}>
-                <div>
-                    <p>Email</p>
+                
+                    <span>Email</span>
                     <input
                         type="email"
                         placeholder="email address"
                         onChange={(e) => setData({ ...data, email: e.target.value })}
                     />
-                </div>
-                <div>
-                    <p>Password</p>
+                    <span>Password</span>
                     <input
                         type="password"
                         placeholder="password"
                         onChange={(e) => setData({ ...data, password: e.target.value })}
                     />
-                </div>
-                <div>
-                    <p>Re-Type Password</p>
+                    <span>Re-Type Password</span>
                     <input
                         type="password"
                         placeholder="••••••••"
@@ -89,7 +83,6 @@ const SignUp = () => {
                             })
                         }
                     />
-                </div>
                 <button type="submit">Sign Up</button>
             </form>
             <span>
