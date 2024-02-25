@@ -43,11 +43,7 @@ a:hover{
   font-weight: bold;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
+
 
 button {
   background-color: black;
@@ -64,7 +60,9 @@ button:hover {
   cursor: pointer;
 }
 
-
+form{
+  gap:.5rem;
+}
 
 ::-webkit-scrollbar {
 	width: 2%;
