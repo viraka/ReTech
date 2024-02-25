@@ -1,7 +1,7 @@
 import { useState } from "react";
-//import toast from "react-hot-toast";
-//import { useNavigate } from "react-router-dom";
-//import { supabase } from "../../utils/supabase";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import { supabase } from "../../utils/supabase";
 import styles from './SignUp.module.css';
 
 const SignUp = () => {
@@ -10,46 +10,46 @@ const SignUp = () => {
         password: "",
         confirmPassword: "",
     });
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
 
-    //const handleSignUp = async () => {
-    // let { data: res, error } = await supabase.auth.signUp({
-    //     email: data.email,
-    //     password: data.password,
-    // });
-    // if (error) {
-    //     throw error.message;
-    // } else {
-    //     localStorage.setItem("user", JSON.stringify(res.session));
-    //     return res;
-    // }
-    //};
+    const handleSignUp = async () => {
+        let { data: res, error } = await supabase.auth.signUp({
+            email: data.email,
+            password: data.password,
+        });
+        if (error) {
+            throw error.message;
+        } else {
+            localStorage.setItem("user", JSON.stringify(res.session));
+            return res;
+        }
+    };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        // const isAnyFieldEmpty = Object.values(data).some(
-        //     (value) => value.trim() === ""
-        // );
-        // if (data.password !== data.confirmPassword) {
-        //     toast.error("Passwords do not match.");
-        //     return;
-        // }
-        // if (isAnyFieldEmpty) {
-        //     toast.error("Please fill out all fields.");
-        //     return;
-        // }
+        const isAnyFieldEmpty = Object.values(data).some(
+            (value) => value.trim() === ""
+        );
+        if (data.password !== data.confirmPassword) {
+            toast.error("Passwords do not match.");
+            return;
+        }
+        if (isAnyFieldEmpty) {
+            toast.error("Please fill out all fields.");
+            return;
+        }
 
-        // toast.promise(handleSignUp(), {
-        //     loading: "Signing up...",
-        //     success: () => {
-        //         navigate("/profile-create");
-        //         return <b>Signed in successfully</b>;
-        //     },
-        //     error: (error) => {
-        //         return <b>{error}</b>;
-        //     },
-        // });
+        toast.promise(handleSignUp(), {
+            loading: "Signing up...",
+            success: () => {
+                navigate("/dashboard");
+                return <b>Signed in successfully</b>;
+            },
+            error: (error) => {
+                return <b>{error}</b>;
+            },
+        });
     };
 
     return (
