@@ -8,7 +8,7 @@ import './App.css'
 import { PrivateRoute } from './services/PrivateRoute';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Search from './pages/Search/Search';
-import About from './components/About/About';
+import About from './pages/About/About';
 
 function App() {
   const router = createBrowserRouter([
