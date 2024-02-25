@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './SearchBar.module.css'
 
 type Props = {
     selectedOption: string;
@@ -23,7 +24,7 @@ const SearchBar = ({ selectedOption, setSelectedOption, searchTerm, setSearchTer
     };
 
     return (
-        <div className="search-bar">
+        <div className={styles.searchBar}>
             <select value={selectedOption} onChange={handleOptionChange}>
                 <option value="product">Product</option>
                 <option value="service">Service</option>
@@ -34,7 +35,7 @@ const SearchBar = ({ selectedOption, setSelectedOption, searchTerm, setSearchTer
                 value={searchTerm}
                 onChange={handleSearchTermChange}
             />
-            <button onClick={handleSearch}>Search</button>
+           
         </div>
     );
 };

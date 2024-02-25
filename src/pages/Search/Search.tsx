@@ -3,6 +3,7 @@ import styles from './Search.module.css'
 import Card from './components/Card/Card'
 import SearchBar from './components/SearchBar/SearchBar'
 import { supabase } from '../../utils/supabase'
+import Navbar from '../../components/Navbar/Navbar'
 const Search = () => {
     const [data, setData] = useState<shop[]>([])
     const [selectedOption, setSelectedOption] = useState('product');
@@ -23,14 +24,17 @@ const Search = () => {
     }, [])
 
     return (
+        <div className={styles.allWrapper}>
         <>
-            <div className={styles.searchWrapper}></div>
-            <SearchBar
+        <Navbar/>
+            <div className={styles.searchWrapper}>
+                <SearchBar
                 selectedOption={selectedOption}
                 setSelectedOption={setSelectedOption}
                 searchTerm={searchTerm}
                 setSearchTerm={setSearchTerm}
             />
+            </div>
             {data?.filter((shop) => {
                 if (searchTerm === '') {
                     return true;
@@ -39,15 +43,18 @@ const Search = () => {
                     || (shop.products.some(product => product.startsWith(searchTerm)) && selectedOption == 'product'))
             })
                 .map((shop, index) =>
-                (
+                (   
+
+                    <div className={styles.cardWrapper}>
                     <Card
                         key={index}
                         shop={shop}
                     />
+                    </div>
                 )
                 )}
-
         </>
+            </div>
     )
 }
 

@@ -1,4 +1,4 @@
-
+import styles from './Card.module.css'
 type Props = {
     shop: shop
 }
@@ -14,15 +14,15 @@ const Card = ({ shop }: Props) => {
     } = shop;
 
     return (
-        <div className="company-card">
+        <div className={styles.card}>
             <h2>{name}</h2>
-            <p>Address: {address}</p>
-            <p>Phone: {phone}</p>
-            <p>Email: {email}</p>
-            <p>Services: {services.join(', ')}</p>
-            <p>Products: {products.join(', ')}</p>
+            <span>Address: {address}</span>
+            <span>Phone: {phone}</span>
+            <span>Email: {email}</span>
+            <span>Services: {services.join(', ')}</span>
+            <span>Products: {products.join(', ')}</span>
             <a href={locationLink} target="_blank" rel="noopener noreferrer">
-                View on Map
+                 View in Map
             </a>
         </div>
     );
