@@ -6,4 +6,6 @@ interface shop {
     address: string
     phone: string
     email: string
+    services: string[]
+    products: string[]
 }
