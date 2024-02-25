@@ -18,10 +18,7 @@ const SearchBar = ({ selectedOption, setSelectedOption, searchTerm, setSearchTer
         setSearchTerm(event.target.value);
     };
 
-    const handleSearch = () => {
-        // You can perform search based on selectedOption and searchTerm
-        console.log(`Searching for ${selectedOption}: ${searchTerm}`);
-    };
+
 
     return (
         <div className={styles.searchBar}>
@@ -35,7 +32,7 @@ const SearchBar = ({ selectedOption, setSelectedOption, searchTerm, setSearchTer
                 value={searchTerm}
                 onChange={handleSearchTermChange}
             />
-           
+
         </div>
     );
 };
