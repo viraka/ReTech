@@ -55,6 +55,64 @@ const Dashboard = () => {
             return data;
         }
     }
+    const addService = async () => {
+
+        if (Array.isArray(companyDetails.services)) {
+            setCompanyDetails({ ...companyDetails, services: [...companyDetails.services, service] });
+            const res = await supabase
+                .from('shop')
+                .upsert({ ...companyDetails, services: [...companyDetails.services, service] })
+                .select()
+            if (res.error) {
+                throw res.error;
+            }
+            else {
+                return res
+            }
+        } else {
+            setCompanyDetails({ ...companyDetails, services: [service] });
+            const res = await supabase
+                .from('shop')
+                .upsert({ ...companyDetails, services: [service] })
+                .select();
+            if (res.error) {
+                throw res.error;
+            }
+            else {
+                return res
+            }
+        }
+    }
+
+
+    const addProduct = async () => {
+
+        if (Array.isArray(companyDetails.products)) {
+            setCompanyDetails({ ...companyDetails, products: [...companyDetails.products, product] });
+            const res = await supabase
+                .from('shop')
+                .upsert({ ...companyDetails, products: [...companyDetails.products, product] })
+                .select()
+            if (res.error) {
+                throw res.error;
+            }
+            else {
+                return res
+            }
+        } else {
+            setCompanyDetails({ ...companyDetails, products: [product] });
+            const res = await supabase
+                .from('shop')
+                .upsert({ ...companyDetails, products: [product] })
+                .select();
+            if (res.error) {
+                throw res.error;
+            }
+            else {
+                return res
+            }
+        }
+    }
 
 
     const handleSignOut = async () => {
@@ -98,24 +156,22 @@ const Dashboard = () => {
         e.preventDefault();
 
         const isAnyFieldEmpty = Object.entries(companyDetails)
-  .filter(
-    ([key]) =>
-      key !== "owner_id" &&
-      key !== "email"
-  )
-  .some(([, value]) => {
-    if (typeof value === 'string') {
-      return value.trim() === "";
-    }
-    return false;
-  });
+            .filter(
+                ([key]) =>
+                    key !== "owner_id" &&
+                    key !== "email"
+            )
+            .some(([, value]) => {
+                if (typeof value === 'string') {
+                    return value.trim() === "";
+                }
+                return false;
+            });
 
-if (isAnyFieldEmpty) {
-  toast.error("Please fill out all fields.");
-  return;
-}
-
-
+        if (isAnyFieldEmpty) {
+            toast.error("Please fill out all fields.");
+            return;
+        }
 
         toast.promise(handleCreateUser(), {
             loading: "Creating your profile...",
@@ -154,8 +210,8 @@ if (isAnyFieldEmpty) {
                     </div>
                     <div className="">
                         <p>Services</p>
-                        {companyDetails.services?.map((service) => {
-                            return <div>{service}</div>
+                        {companyDetails.services?.map((service, index) => {
+                            return <div key={index}>{service}</div>
                         })
                         }
                     </div>
@@ -163,27 +219,32 @@ if (isAnyFieldEmpty) {
                         <input value={service}
                             onChange={(e) => setService(e.target.value)}
                             type="text" />
-                        <button onClick={() => setCompanyDetails({ ...companyDetails, services: [...companyDetails.services, service] })}>Add</button>
+                        <button onClick={() => addService()}>Add</button>
                     </div>
                     <div className="">
                         <p>Product</p>
-                        {companyDetails.products?.map((product) => {
-                            return <div>{product}</div>
+                        {companyDetails.products?.map((product, index) => {
+                            return <div key={index}>{product}</div>
                         })
                         }
                     </div>
                     <div className="Add-product">
-                        <input type="text" />
-                        <button>Add</button>
+                        <input
+                            value={product}
+                            type="text"
+                            onChange={(e) => setProduct(e.target.value)}
+
+                        />
+                        <button onClick={() => addProduct()}>Add</button>
                     </div>
-            <div className="signout">
-                <button onClick={handleSignOut}>Sign Out</button>
-            </div>
+                    <div className="signout">
+                        <button onClick={handleSignOut}>Sign Out</button>
+                    </div>
                 </>
             ) : (
 
                 <Form
-                
+
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
                     companyDetails={companyDetails}
