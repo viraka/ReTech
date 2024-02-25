@@ -98,22 +98,29 @@ const Dashboard = () => {
         e.preventDefault();
 
         const isAnyFieldEmpty = Object.entries(companyDetails)
-            .filter(
-                ([key]) =>
-                    key !== "owner_id" &&
-                    key !== "email"
-            )
-            .some(([, value]) => value.trim() === "");
+  .filter(
+    ([key]) =>
+      key !== "owner_id" &&
+      key !== "email"
+  )
+  .some(([, value]) => {
+    if (typeof value === 'string') {
+      return value.trim() === "";
+    }
+    return false;
+  });
 
-        if (isAnyFieldEmpty) {
-            toast.error("Please fill out all fields.");
-            return;
-        }
+if (isAnyFieldEmpty) {
+  toast.error("Please fill out all fields.");
+  return;
+}
+
 
 
         toast.promise(handleCreateUser(), {
             loading: "Creating your profile...",
             success: () => {
+                setIsAuth(true)
                 navigate("/dashboard");
                 return <b>Profile creation successful</b>;
             },
@@ -169,18 +176,19 @@ const Dashboard = () => {
                         <input type="text" />
                         <button>Add</button>
                     </div>
+            <div className="signout">
+                <button onClick={handleSignOut}>Sign Out</button>
+            </div>
                 </>
             ) : (
 
                 <Form
+                
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
                     companyDetails={companyDetails}
                 />
             )}
-            <div className="signout">
-                <button onClick={handleSignOut}>Sign Out</button>
-            </div>
         </>
     )
 }

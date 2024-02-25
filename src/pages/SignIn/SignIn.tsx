@@ -61,7 +61,7 @@ const SignIn = () => {
             </div>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <div>
-                    <p>Email</p>
+                    Email
                     <input
                         type="email"
                         placeholder="email address"
@@ -69,7 +69,7 @@ const SignIn = () => {
                     />
                 </div>
                 <div>
-                    <p>Password</p>
+                    Password
                     <input
                         type="password"
                         placeholder="••••••••"
@@ -87,7 +87,7 @@ const SignIn = () => {
                 <button type="submit">Sign In</button>
             </form>
 
-            <span>
+            <span className={styles.link}>
                 Don&apos;t have an account? &nbsp;
                 <a href="/signup">Sign up</a>
             </span>

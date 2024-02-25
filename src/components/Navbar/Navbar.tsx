@@ -1,26 +1,52 @@
-import styles from './Navbar.module.css'
-import { Link, useNavigate } from 'react-router-dom'
-import { FaCirclePlus } from "react-icons/fa6";
-const Navbar = () => {
-    const navigate = useNavigate()
-    return (
-        <>
-            <div className={styles.navbarWrapper}>
-                <div className={styles.navbarHeading}>Re<span>Tech</span></div>
-                <div className={styles.navbarLinks}>
-                    <ul>
-                        <li><Link to={'/'}>Home</Link></li>
-                        <li><Link to={'#about'}>About</Link></li>
-                        <li><Link to={'/search'}>Services</Link></li>
-                    </ul>
-                </div>
-                <div className={styles.navbarButtons}>
-                    <button onClick={() => navigate('/login')}>Log In</button>
-                    <button onClick={() => navigate('/signup')}><span><FaCirclePlus /></span> Add Shop</button>
-                </div>
-            </div>
-        </>
-    )
-}
+import  { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import styles from './Navbar.module.css';
+import image from '../../assets/Logo.png';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
-export default Navbar
+const Navbar = () => {
+  const navigate = useNavigate();
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownVisible(!isDropdownVisible);
+  };
+
+
+  return (
+    <>
+      <div className={styles.navbarWrapper}>
+        <div className={styles.navbarHeading}>
+          <span onClick={toggleDropdown} >
+            <GiHamburgerMenu />
+            {isDropdownVisible && (
+              <ul>
+                <li>
+                  <Link to={"/"}>Home</Link>
+                </li>
+                <hr />
+                <li>
+                  <Link to={"/about"} >About</Link>
+                </li>
+                <hr />
+                <li>
+                  <Link to={"/search"}>Services</Link>
+                </li>
+              </ul>
+            )}
+          </span>
+        </div>
+        
+        <div className={styles.navbarLogo}>
+          <img src={image} alt="Logo" />
+        </div>
+
+        <div className={styles.navbarButton}>
+        <button onClick={() => navigate("/login")}>Log In</button>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Navbar;

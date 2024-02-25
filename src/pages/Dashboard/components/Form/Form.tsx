@@ -1,3 +1,4 @@
+import { MdOutlineNotificationImportant } from 'react-icons/md';
 import styles from './Form.module.css'
 type Props = {
     handleChange: (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => void;
@@ -9,13 +10,14 @@ type Props = {
         address: string;
         locationLink: string;
     }
+    
 }
 
 const Form = ({ handleChange, handleSubmit, companyDetails }: Props) => {
     return (
         <>
-            <p>Please fill your Company Details to Continue</p>
             <form onSubmit={handleSubmit} className={styles.companyForm}>
+            <p><MdOutlineNotificationImportant />Please fill your Company Details to Continue</p>
                 <label>
                     Name:
                     <input
