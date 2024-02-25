@@ -208,45 +208,47 @@ const Dashboard = () => {
                         <div className={styles.dashboardBox}>
                            <div className={styles.mainContent}> 
                                 <span>{companyDetails.name}</span>
+                                <span>{companyDetails.description}</span>
                                 <span>{companyDetails.email}</span>
                                 <span>{companyDetails.address}</span>
                                 <span>{companyDetails.phone}</span>
+                                <span>{companyDetails.locationLink}</span>
                             </div>
-                            {/* {companyDetails.description}
-                            {companyDetails.locationLink} */}
+                            
                             <div> <img src="https://i.pinimg.com/originals/ec/d9/c2/ecd9c2e8ed0dbbc96ac472a965e4afda.jpg" alt="No image" /></div>
                         </div>
                     </div>
-                    <div className="">
-                        <p>Services</p>
-                        {companyDetails.services?.map((service, index) => {
-                            return <div key={index}>{service}</div>
-                        })
-                        }
-                    </div>
-                    <div className="Add-service">
+                    <div className={styles.dashboardServices}>
+                        <span>Services :</span>
+                        
+                    <div className={styles.addServices}>
                         <input value={service}
                             onChange={(e) => setService(e.target.value)}
                             type="text" />
+                    </div>
                         <button onClick={() => addService()}>Add</button>
                     </div>
-                    <div className="">
-                        <p>Product</p>
-                        {companyDetails.products?.map((product, index) => {
-                            return <div key={index}>{product}</div>
+                    {companyDetails.services?.map((service, index) => {
+                            return <div key={index} className={styles.servies}>{service}</div>
                         })
                         }
-                    </div>
-                    <div className="Add-product">
+                    <div className={styles.dashboardServices}>
+                        <span>Products : </span>
+                        
+                    <div className={styles.addServices}>
                         <input
                             value={product}
                             type="text"
                             onChange={(e) => setProduct(e.target.value)}
-
-                        />
+                            
+                            />
+                    </div>
                         <button onClick={() => addProduct()}>Add</button>
                     </div>
-            
+                    {companyDetails.products?.map((product, index) => {
+                            return <div key={index} className={styles.servies}>{product}</div>
+                        })
+                        }
                 </>
             ) : (
 
