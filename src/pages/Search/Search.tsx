@@ -24,37 +24,42 @@ const Search = () => {
     }, [])
 
     return (
-        <div className={styles.allWrapper}>
-        <>
-        <Navbar/>
-            <div className={styles.searchWrapper}>
-                <SearchBar
-                selectedOption={selectedOption}
-                setSelectedOption={setSelectedOption}
-                searchTerm={searchTerm}
-                setSearchTerm={setSearchTerm}
-            />
-            </div>
-            {data?.filter((shop) => {
-                if (searchTerm === '') {
-                    return true;
-                }
-                return ((shop.services.some(service => service.startsWith(searchTerm)) && selectedOption == 'service')
-                    || (shop.products.some(product => product.startsWith(searchTerm)) && selectedOption == 'product'))
-            })
-                .map((shop, index) =>
-                (   
 
-                    <div className={styles.cardWrapper}>
-                    <Card
-                        key={index}
-                        shop={shop}
+        <>
+            <div className={styles.allWrapper}>
+                <Navbar />
+
+                <div className={styles.searchWrapper}>
+                    <SearchBar
+                        selectedOption={selectedOption}
+                        setSelectedOption={setSelectedOption}
+                        searchTerm={searchTerm}
+                        setSearchTerm={setSearchTerm}
                     />
-                    </div>
-                )
-                )}
+                </div>
+                {data?.filter((shop) => {
+                    if (searchTerm === '') {
+                        return true;
+                    }
+                    return ((shop.services.some(service => service.startsWith(searchTerm)) && selectedOption == 'service')
+                        || (shop.products.some(product => product.startsWith(searchTerm)) && selectedOption == 'product'))
+                })
+                    .map((shop, index) =>
+                    (
+
+                        <div className={styles.cardWrapper}>
+                            <Card
+                                key={index}
+                                shop={shop}
+                            />
+                        </div>
+                    )
+                    )}
+            </div >
+
         </>
-            </div>
+
+
     )
 }
 
